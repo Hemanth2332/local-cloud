@@ -42,7 +42,7 @@ def start_instance(image_name:str):
         try:
             client = docker.from_env()
             _ = client.containers.run(
-                "tensorflow-2.10.1-gpu",
+                "tensorflow-2.10.1",
                 detach=True,
                 device_requests=[ docker.types.DeviceRequest(device_ids=["0"], capabilities=[['gpu']])],
                 ports={'8888':'8888'}

@@ -25,7 +25,7 @@ then
                 echo "tensorflow image built exists"
         else
                 echo "tensorflow  is not built"
-                echo "building the gpu image"
+                echo "building the GPU tensorflow image"
                 echo "--------------------------------------------------------"
                 docker build -t tensorflow-2.10.1  --target tfgpu -f tensorflow.dockerfile .
 
@@ -43,7 +43,7 @@ else
                 echo "tensorflow image built exists"
         else
                 echo "tensorflow  is not built"
-                echo "building the gpu image"
+                echo "building the CPU tensorflow image"
                 echo "--------------------------------------------------------"
                 docker build -t tensorflow-2.10.1 --target tfcpu -f tensorflow.dockerfile .
 
