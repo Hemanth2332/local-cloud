@@ -16,11 +16,11 @@ Download the docker from the offical page https://docs.docker.com/get-docker/
 
 ## Run the script
 
-    python ./cli.py
+    python ./cli/cli.py
 
 ## Run the webui
 
-        ./webui.sh
+        python ./webui/app.py
 
 ## Warning !!
 - This program runs on top of the docker api
