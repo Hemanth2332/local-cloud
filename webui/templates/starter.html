@@ -47,15 +47,15 @@
                   <label class="input-group-text bg-dark text-white" for="inputGroupSelect01">Image selected</label>
                     <select class="form-select" id="base_image" name="base_image">
 
-                      {% if img_name == 'python' %}
+                      {% if img_name == 'Python' %}
                       <option value="python:3.10-slim" selected>Python</option>
                       <option value="debian:latest">Debian</option>
                       <option value="ubuntu:latest">Ubutnu</option>
-                      {% elif img_name == 'debian' %}
+                      {% elif img_name == 'Debian' %}
                       <option value="debian:latest" selected>Debian</option>
                       <option value="python:3.10-slim">Python</option>
                       <option value="ubuntu:latest">Ubutnu</option>
-                      {% elif img_name == 'ubuntu' %}
+                      {% elif img_name == 'Ubuntu' %}
                       <option value="ubuntu:latest" selected>Ubuntu</option>
                       <option value="python:3.10-slim">Python</option>
                       <option value="debian:latest">Debian</option>
@@ -74,7 +74,7 @@
                         <label class="input-group-text bg-dark text-white" for="inputGroupSelect01">Ports</label>
                         <select class="form-select" id="ports" name="default_ports">
 
-                          {% if img_name == 'python' %}
+                          {% if img_name == 'Python' %}
                           <option value="22">Default [only ssh] (22)</option>
 
                           {% else %}
