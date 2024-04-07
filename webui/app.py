@@ -23,10 +23,10 @@ app = Flask(__name__)
 
 IP_ADDR = get_ipaddress()
 
-IMG_LIST = [{"name":"tf-lab", "filepath":"tf.jpeg"},
-          {"name":"python", "filepath":"python.jpeg"},
-          {"name":"debian", "filepath":"debian.jpeg"},
-          {"name":"ubuntu", "filepath":"ubuntu.jpeg"},
+IMG_LIST = [{"name":"Tensorflow-lab", "filepath":"tf.jpeg"},
+          {"name":"Python", "filepath":"python.jpeg"},
+          {"name":"Debian", "filepath":"debian.jpeg"},
+          {"name":"Ubuntu", "filepath":"ubuntu.jpeg"},
           ]
 
 
@@ -38,7 +38,7 @@ def getindex():
 
 @app.route("/start/<image_name>")
 def start_instance(image_name:str):
-    if image_name == 'tf-lab':
+    if image_name == 'Tensorflow-lab':
         try:
             client = docker.from_env()
             _ = client.containers.run(
@@ -139,4 +139,4 @@ def stopinstance(image_name:str):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0")

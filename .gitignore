@@ -5,6 +5,7 @@ __pycache__/*
 test*
 # C extensions
 *.so
+cmdvenv
 
 # Distribution / packaging
 .Python

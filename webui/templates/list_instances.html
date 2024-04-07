@@ -15,7 +15,7 @@
     <section>
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-fixed-top navbar-dark" data-bs-theme="dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Cloud Instaces</a>
+              <a class="navbar-brand" href="#">Cloud Instances</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -26,12 +26,6 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link me-4 active" href="/listisntance">List</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link me-4" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link me-5" aria-disabled="true">Disabled</a>
                   </li>
                 </ul>
               </div>
@@ -69,10 +63,15 @@
                     <div class="row">
                       
                       <div class="col-9" id="copytext">
-                          {% if "tensorflow-2.10.1-gpu" in image.image | string %}
-                          <code>http://{{ ip_addr }}:8888/lab</code>
+                          {% if "tensorflow-2.10.1" in image.image | string %}
+                          <div class="container" style="background-color: black !important;border-radius: 3px;">
+                            <code>http://{{ ip_addr }}:8888/lab</code>
+                          </div>
                           {% else %}
-                          <code>ssh root@{{ ip_addr }} -p {{ image.ports['22/tcp'][0].HostPort }}</code>
+                          <div class="container" style="background-color: black !important;border-radius: 3px;">
+                            <code>ssh root@{{ ip_addr }} -p {{ image.ports['22/tcp'][0].HostPort }}</code>
+                          </div>
+                          
                           {% endif %}
                       </div>
                       

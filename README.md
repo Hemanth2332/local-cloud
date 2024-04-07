@@ -8,7 +8,8 @@ Environtment for learning about cloud systems at your home
     sudo apt install -y docker.io
 
 ### On Windows and Mac OS:
-Download the docker from the offical page https://docs.docker.com/get-docker/
+Install **WSL**. Follow https://learn.microsoft.com/en-us/windows/wsl/install for installation
+Download the **docker** from the offical page https://docs.docker.com/get-docker/
 
 ## Setup
 
