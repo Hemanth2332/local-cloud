@@ -17,10 +17,10 @@ Download the **docker** from the offical page https://docs.docker.com/get-docker
 
     pip install -r requirements.txt
 
-### Use startup_script for linux
+### Use startup_script for Unix systems
     ./start_webui.sh
 
-### Use startup_script for windows
+### Use startup_script for Windows
     .\start_webui.bat
 
 
