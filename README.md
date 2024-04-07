@@ -11,9 +11,18 @@ Environtment for learning about cloud systems at your home
 Install **WSL**. Follow https://learn.microsoft.com/en-us/windows/wsl/install for installation
 Download the **docker** from the offical page https://docs.docker.com/get-docker/
 
+
+
 ## Setup
 
     pip install -r requirements.txt
+
+### Use startup_script for linux
+    ./start_webui.sh
+
+### Use startup_script for windows
+    .\start_webui.bat
+
 
 ## Run the script
 
@@ -26,5 +35,4 @@ Download the **docker** from the offical page https://docs.docker.com/get-docker
 ## Warning !!
 - This program runs on top of the docker api
 - create a virtual environment for safe usage
-- For windows users Run inside WSL
 
