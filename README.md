@@ -24,7 +24,7 @@ Download the **docker** from the offical page https://docs.docker.com/get-docker
     .\start_webui.bat
 
 
-## Run the script
+## Run the script (cli mode)
 
     python ./cli/cli.py
 
