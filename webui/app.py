@@ -4,11 +4,22 @@ from flask import (
     request,
     redirect
 )
-
+import subprocess
 import docker
 import socket
 import api_dockerfunctions as df
 import api_writedockerfile as wf
+
+def check_gpu_existence():
+    try:
+        result = subprocess.run(['nvidia-smi'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if result.returncode == 0:
+            return True
+        else:
+            return False
+    except FileNotFoundError:
+        return False
+    
 
 def get_ipaddress():
     try:
@@ -40,14 +51,23 @@ def getindex():
 def start_instance(image_name:str):
     if image_name == 'Tensorflow-lab':
         try:
-            client = docker.from_env()
-            _ = client.containers.run(
-                "tensorflow-2.10.1",
-                detach=True,
-                device_requests=[ docker.types.DeviceRequest(device_ids=["0"], capabilities=[['gpu']])],
-                ports={'8888':'8888'}
-            )
-            return redirect("/listinstance")
+            if check_gpu_existence():
+                client = docker.from_env()
+                _ = client.containers.run(
+                    "tensorflow-2.10.1",
+                    detach=True,
+                    device_requests=[ docker.types.DeviceRequest(device_ids=["0"], capabilities=[['gpu']])],
+                    ports={'8888':'8888'}
+                )
+                return redirect("/listinstance")
+            else:
+                client = docker.from_env()
+                _ = client.containers.run(
+                    "tensorflow-2.10.1",
+                    detach=True,
+                    ports={'8888':'8888'}
+                )
+                return redirect("/listinstance")
         
         except Exception as e:
             return "could not start container tflab " + str(e)  
