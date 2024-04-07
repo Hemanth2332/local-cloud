@@ -37,5 +37,5 @@ Download the **docker** from the offical page https://docs.docker.com/get-docker
 - create a virtual environment for safe usage
 - use this command for clearing up the cache
     
-            docker system prune 
+        docker system prune 
      
