@@ -35,4 +35,6 @@ Download the **docker** from the offical page https://docs.docker.com/get-docker
 ## Warning !!
 - This program runs on top of the docker api
 - create a virtual environment for safe usage
-
+- use this command for clearing up the cache
+        docker system prune 
+     
